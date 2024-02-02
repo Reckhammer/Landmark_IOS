@@ -11,10 +11,27 @@ struct LandmarkList: View
 {
     var body: some View 
     {
-        List(landmarks)
+        NavigationSplitView
         {
-            landmark in LandmarkRow(landmark: landmark);
+            List(landmarks)
+            {
+                landmark in
+                NavigationLink
+                {
+                    LandmarkDetail(landmark: landmark);
+                }
+                label:
+                {
+                    LandmarkRow(landmark: landmark);
+                }
+            }
+            .navigationTitle("Landmarks");
         }
+        detail:
+        {
+            Text("Select a Landmark");
+        }
+        
     }
 }
 
