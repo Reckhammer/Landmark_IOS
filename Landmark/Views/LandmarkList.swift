@@ -24,18 +24,27 @@ struct LandmarkList: View
     {
         NavigationSplitView
         {
-            List(filteredLandmarks)
+            List
             {
-                landmark in
-                NavigationLink
+                Toggle(isOn: $showFavoritesOnly)
                 {
-                    LandmarkDetail(landmark: landmark);
+                    Text("Favorites Only");
                 }
-                label:
+                
+                ForEach(filteredLandmarks)
                 {
-                    LandmarkRow(landmark: landmark);
+                    landmark in
+                    NavigationLink
+                    {
+                        LandmarkDetail(landmark: landmark);
+                    }
+                    label:
+                    {
+                        LandmarkRow(landmark: landmark);
+                    }
                 }
             }
+            .animation(.default, value:filteredLandmarks)
             .navigationTitle("Landmarks");
         }
         detail:
