@@ -10,10 +10,16 @@
 import SwiftUI
 
 @main
-struct LandmarkApp: App {
-    var body: some Scene {
-        WindowGroup {
+struct LandmarkApp: App 
+{
+    @State private var modelData = ModelData();
+    
+    var body: some Scene
+    {
+        WindowGroup 
+        {
             ContentView()
+                .environment(modelData);
         }
     }
 }
