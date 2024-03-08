@@ -37,7 +37,7 @@ struct LandmarkDetail: View
                 HStack 
                 {
                     Text(landmark.name)
-                        .font(.title)
+                        .font(.title);
                     
                     FavoriteButton(isSet:$modelData.landmarks[landmarkIndex].isFavorite);
                 }
@@ -70,6 +70,6 @@ struct LandmarkDetail: View
 #Preview
 {
     let modelData = ModelData();
-    LandmarkDetail(landmark: modelData.landmarks[0])
-        .environment(modelData);
+    return LandmarkDetail(landmark: modelData.landmarks[0])
+        .environment(modelData)
 }
