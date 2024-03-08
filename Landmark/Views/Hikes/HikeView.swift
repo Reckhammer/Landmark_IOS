@@ -30,7 +30,10 @@ struct HikeView: View {
 
                 Button 
                 {
-                    showDetail.toggle()
+                    withAnimation
+                    {
+                        showDetail.toggle()
+                    }
                 } 
             label:
                 {
