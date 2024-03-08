@@ -12,8 +12,8 @@ struct BadgeBackground: View
     var body: some View 
     {
         GeometryReader
-        {
-            geometry in
+        {   geometry in
+            
             Path
             {
                 path in
@@ -31,8 +31,7 @@ struct BadgeBackground: View
                 );
                 
                 HexagonParameters.segments.forEach
-                {
-                    segment in
+                {   segment in
                     path.addLine(
                         to: CGPoint(
                             x: width * segment.line.x + xOffset,

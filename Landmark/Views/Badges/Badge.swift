@@ -26,8 +26,7 @@ struct Badge: View
             BadgeBackground();
             
             GeometryReader
-            {
-                geometry in
+            {   geometry in
                 
                 badgeSymbols
                     .scaleEffect(1.0 / 4.0, anchor: .top)

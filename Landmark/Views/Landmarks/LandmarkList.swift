@@ -33,8 +33,7 @@ struct LandmarkList: View
                 }
                 
                 ForEach(filteredLandmarks)
-                {
-                    landmark in
+                {   landmark in
                     NavigationLink
                     {
                         LandmarkDetail(landmark: landmark);
