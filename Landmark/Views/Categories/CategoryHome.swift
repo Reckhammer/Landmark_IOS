@@ -7,9 +7,19 @@
 
 import SwiftUI
 
-struct CategoryHome: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct CategoryHome: View 
+{
+    var body: some View 
+    {
+        NavigationSplitView
+        {
+            Text("Hello, World!")
+                .navigationTitle("Featured");
+        }
+    detail:
+        {
+            Text("Select a Landmark");
+        }
     }
 }
 
