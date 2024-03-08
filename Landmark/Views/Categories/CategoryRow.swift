@@ -27,8 +27,15 @@ struct CategoryRow: View
                 {
                     ForEach(items)
                     { landmark in
-                    
-                        CategoryItem(landmark: landmark);
+                        
+                        NavigationLink
+                        {
+                            LandmarkDetail(landmark: landmark);
+                        }
+                    label:
+                        {
+                            CategoryItem(landmark: landmark);
+                        }
                     }
                 }
             }
