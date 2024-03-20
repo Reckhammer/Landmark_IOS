@@ -29,7 +29,7 @@ struct ProfileHost: View
             }
             else
             {
-                Text("Profile Editor");
+                ProfileEditor(profile: $draftProfile);
             }
             
         }
