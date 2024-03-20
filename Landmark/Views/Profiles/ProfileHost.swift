@@ -19,7 +19,17 @@ struct ProfileHost: View
         {
             HStack
             {
+                if (editMode?.wrappedValue == .active)
+                {
+                    Button("Cancel", role: .cancel)
+                    {
+                        draftProfile = modelData.profile;
+                        editMode?.animation().wrappedValue = .inactive;
+                    }
+                }
+                
                 Spacer();
+                
                 EditButton();
             }
             
@@ -29,7 +39,13 @@ struct ProfileHost: View
             }
             else
             {
-                ProfileEditor(profile: $draftProfile);
+                ProfileEditor(profile: $draftProfile)
+                    .onAppear {
+                        draftProfile = modelData.profile;
+                    }
+                    .onDisappear {
+                        modelData.profile = draftProfile;
+                    }
             }
             
         }
